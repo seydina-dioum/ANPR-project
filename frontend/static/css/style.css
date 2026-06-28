@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h1 + p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Onglets */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.tab.active {
+    background: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
+}
+
+/* Contenu onglets */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Zone upload */
+.upload-zone {
+    border: 3px dashed #2c3e50;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    cursor: pointer;
+    color: #777;
+    transition: all 0.2s;
+}
+
+.upload-zone:hover {
+    background: #f8f9fa;
+    color: #2c3e50;
+}
+
+/* Webcam */
+#video {
+    width: 100%;
+    border-radius: 8px;
+    background: #000;
+}
+
+/* Boutons */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #2c3e50;
+    color: white;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #34495e;
+}
+
+.btn-detect {
+    width: 100%;
+    padding: 15px;
+    font-size: 17px;
+    background: #27ae60;
+}
+
+.btn-detect:hover {
+    background: #2ecc71;
+}
+
+/* Chargement */
+#loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #777;
+}
+
+/* Résultats */
+#results {
+    margin-top: 25px;
+}
+
+#results h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.plaque-card {
+    background: #f8f9fa;
+    border-left: 5px solid #27ae60;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.plaque-card.invalide {
+    border-left-color: #e74c3c;
+}
+
+.plaque-texte {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    letter-spacing: 3px;
+}
+
+.plaque-details {
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.badge.valide {
+    background: #27ae60;
+    color: white;
+}
+
+.badge.invalide {
+    background: #e74c3c;
+    color: white;
+}
+
+.no-result {
+    text-align: center;
+    padding: 20px;
+    color: #e74c3c;
+    font-size: 16px;
+}
