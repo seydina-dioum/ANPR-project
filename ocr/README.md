@@ -44,3 +44,29 @@
 ## Jalon 3 — Intégration pipeline complet (à venir)
 
 _À compléter._
+
+## Jalon 3 — Pipeline complet (terminé)
+
+**Fichier créé :**
+- `pipeline.py` : classe `PipelineANPR` qui enchaîne détection (YOLOv8) → prétraitement → OCR → validation → JSON
+
+**Structure de la réponse produite :**
+```json
+{
+  "plaques": [
+    {
+      "texte": "AA-123-BC",
+      "texte_brut": "AA 123 BC",
+      "bbox": [x1, y1, x2, y2],
+      "score_detection": 0.94,
+      "conf_ocr": 0.88,
+      "valide": true,
+      "verdict": "VALIDE"
+    }
+  ],
+  "nb_plaques": 1,
+  "temps_ms": 180
+}
+```
+
+**Test avec modèle générique `yolov8n.pt` :** pipeline tourne sans erreur, 0 détection attendue (modèle non entraîné sur plaques). À retester avec `anpr_best.pt` dès réception du fichier corrigé.
