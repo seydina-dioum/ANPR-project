@@ -11,7 +11,7 @@ from ocr.validator import Validateur, Verdict
 
 class PipelineANPR:
 
-    def __init__(self, modele_path="yolov8n.pt", moteur="easyocr"):
+    def __init__(self, modele_path="detection/models/anpr_best.pt", moteur="easyocr"):
         self.detecteur = YOLO(modele_path)
         self.preproc = Preprocesseur()
         self.validateur = Validateur()
@@ -36,6 +36,10 @@ class PipelineANPR:
             for box in r.boxes:
                 x1, y1, x2, y2 = map(int, box.xyxy[0])
                 score_detection = round(float(box.conf), 4)
+                classe = r.names[int(box.cls)]
+
+                if classe == "Invalid plate":
+                    continue
 
                 crop = image[y1:y2, x1:x2]
                 if crop.size == 0:
@@ -64,12 +68,15 @@ class PipelineANPR:
 
 
 if __name__ == "__main__":
-    pipeline = PipelineANPR(modele_path="yolov8n.pt", moteur="easyocr")
+    pipeline = PipelineANPR(
+        modele_path="detection/models/anpr_best.pt",
+        moteur="easyocr"
+    )
 
     images = [
-        "ocr/test_crops/plaque1.jpg",
-        "ocr/test_crops/plaque3.jpg",
-        "ocr/test_crops/plaque5.jpg",
+        "ocr/test_crops/test_01.jpg",
+        "ocr/test_crops/test_02.jpg",
+        "ocr/test_crops/test_03.jpg",
     ]
 
     for img in images:
@@ -80,4 +87,4 @@ if __name__ == "__main__":
         for p in resultat["plaques"]:
             print(f"  texte='{p['texte']}'  conf_ocr={p['conf_ocr']}  verdict={p['verdict']}")
         if resultat['nb_plaques'] == 0:
-            print("  (aucune plaque detectee par YOLOv8 generique sur cette image)")
+            print("  (aucune plaque detectee)")
