@@ -1,12 +1,10 @@
 from enum import Enum
 import re
 
-
 class Verdict(Enum):
     VALIDE = "VALIDE"
     DOUTEUSE = "DOUTEUSE"
     ILLISIBLE = "ILLISIBLE"
-
 
 class Validateur:
     def __init__(self):

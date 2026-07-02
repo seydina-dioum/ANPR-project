@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  anpr-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./detection/models:/app/detection/models
+    restart: unless-stopped
