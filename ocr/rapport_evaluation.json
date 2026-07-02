@@ -1,0 +1,333 @@
+{
+  "nb_images": 20,
+  "easyocr": {
+    "taux_exact_match": 15.0,
+    "taux_par_caractere": 51.6
+  },
+  "tesseract": {
+    "taux_exact_match": 10.0,
+    "taux_par_caractere": 51.2
+  },
+  "detail": [
+    {
+      "image": "ocr/test_crops/test_01.jpg",
+      "verite": "DK8490AM",
+      "easyocr": {
+        "texte": "1DK8490AM",
+        "conf": 0.22,
+        "exact_match": false,
+        "taux_caractere": 0.88
+      },
+      "tesseract": {
+        "texte": "MOK8490AM",
+        "conf": 0.03,
+        "exact_match": false,
+        "taux_caractere": 0.75
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_02.jpg",
+      "verite": "DK1978ZS",
+      "easyocr": {
+        "texte": "SN",
+        "conf": 0.94,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      },
+      "tesseract": {
+        "texte": "",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_03.jpg",
+      "verite": "DK5217AR",
+      "easyocr": {
+        "texte": "ISN",
+        "conf": 0.93,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      },
+      "tesseract": {
+        "texte": "BIDK5217AR",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.75
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_04.jpg",
+      "verite": "DK7620AB",
+      "easyocr": {
+        "texte": "DK",
+        "conf": 0.99,
+        "exact_match": false,
+        "taux_caractere": 0.25
+      },
+      "tesseract": {
+        "texte": "1620KB",
+        "conf": 0.05,
+        "exact_match": false,
+        "taux_caractere": 0.5
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_05.jpg",
+      "verite": "00LH2877",
+      "easyocr": {
+        "texte": "IRL",
+        "conf": 0.98,
+        "exact_match": false,
+        "taux_caractere": 0.12
+      },
+      "tesseract": {
+        "texte": "B00LH2877",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.88
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_06.jpg",
+      "verite": "CE137CD",
+      "easyocr": {
+        "texte": "FCE137CO1",
+        "conf": 0.08,
+        "exact_match": false,
+        "taux_caractere": 0.57
+      },
+      "tesseract": {
+        "texte": "",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_07.jpg",
+      "verite": "AA644AS",
+      "easyocr": {
+        "texte": "644AS",
+        "conf": 0.85,
+        "exact_match": false,
+        "taux_caractere": 0.71
+      },
+      "tesseract": {
+        "texte": "ANAS",
+        "conf": 0.3,
+        "exact_match": false,
+        "taux_caractere": 0.43
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_08.jpg",
+      "verite": "DK9542BC",
+      "easyocr": {
+        "texte": "UIID",
+        "conf": 0.1,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      },
+      "tesseract": {
+        "texte": "OE582BC",
+        "conf": 0.52,
+        "exact_match": false,
+        "taux_caractere": 0.5
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_09.jpg",
+      "verite": "CH242GP",
+      "easyocr": {
+        "texte": "8242GP78",
+        "conf": 0.15,
+        "exact_match": false,
+        "taux_caractere": 0.43
+      },
+      "tesseract": {
+        "texte": "4242GP",
+        "conf": 0.13,
+        "exact_match": false,
+        "taux_caractere": 0.71
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_10.jpg",
+      "verite": "AA296AG",
+      "easyocr": {
+        "texte": "01",
+        "conf": 0.79,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      },
+      "tesseract": {
+        "texte": "",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_11.jpg",
+      "verite": "AA123AA",
+      "easyocr": {
+        "texte": "AA123AA",
+        "conf": 0.96,
+        "exact_match": true,
+        "taux_caractere": 1.0
+      },
+      "tesseract": {
+        "texte": "BHAA123AAK",
+        "conf": 0.15,
+        "exact_match": false,
+        "taux_caractere": 0.57
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_12.jpg",
+      "verite": "AA123BC",
+      "easyocr": {
+        "texte": "DK",
+        "conf": 1.0,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      },
+      "tesseract": {
+        "texte": "S193BC",
+        "conf": 0.36,
+        "exact_match": false,
+        "taux_caractere": 0.57
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_13.jpg",
+      "verite": "EL895JH",
+      "easyocr": {
+        "texte": "895JH",
+        "conf": 0.77,
+        "exact_match": false,
+        "taux_caractere": 0.71
+      },
+      "tesseract": {
+        "texte": "OAT",
+        "conf": 0.15,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_14.jpg",
+      "verite": "B13JWT",
+      "easyocr": {
+        "texte": "B13",
+        "conf": 0.95,
+        "exact_match": false,
+        "taux_caractere": 0.5
+      },
+      "tesseract": {
+        "texte": "",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_15.jpg",
+      "verite": "CM5459",
+      "easyocr": {
+        "texte": "CM5459",
+        "conf": 0.51,
+        "exact_match": true,
+        "taux_caractere": 1.0
+      },
+      "tesseract": {
+        "texte": "ACM5459",
+        "conf": 0.56,
+        "exact_match": false,
+        "taux_caractere": 0.83
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_16.jpg",
+      "verite": "DK1673M",
+      "easyocr": {
+        "texte": "DK16731",
+        "conf": 0.41,
+        "exact_match": false,
+        "taux_caractere": 0.86
+      },
+      "tesseract": {
+        "texte": "DK1673M",
+        "conf": 0.55,
+        "exact_match": true,
+        "taux_caractere": 1.0
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_17.jpg",
+      "verite": "5888870",
+      "easyocr": {
+        "texte": "5888870",
+        "conf": 0.68,
+        "exact_match": true,
+        "taux_caractere": 1.0
+      },
+      "tesseract": {
+        "texte": "15888870",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.86
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_18.jpg",
+      "verite": "DL1CP5896",
+      "easyocr": {
+        "texte": "DLICP5896",
+        "conf": 0.72,
+        "exact_match": false,
+        "taux_caractere": 0.89
+      },
+      "tesseract": {
+        "texte": "OL1CP5896",
+        "conf": 0.68,
+        "exact_match": false,
+        "taux_caractere": 0.89
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_19.jpg",
+      "verite": "CB07257",
+      "easyocr": {
+        "texte": "07251",
+        "conf": 0.85,
+        "exact_match": false,
+        "taux_caractere": 0.57
+      },
+      "tesseract": {
+        "texte": "",
+        "conf": 0.0,
+        "exact_match": false,
+        "taux_caractere": 0.0
+      }
+    },
+    {
+      "image": "ocr/test_crops/test_20.jpg",
+      "verite": "BB391X",
+      "easyocr": {
+        "texte": "B3391X",
+        "conf": 0.63,
+        "exact_match": false,
+        "taux_caractere": 0.83
+      },
+      "tesseract": {
+        "texte": "BB391X",
+        "conf": 0.17,
+        "exact_match": true,
+        "taux_caractere": 1.0
+      }
+    }
+  ]
+}
