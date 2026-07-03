@@ -1,0 +1,6 @@
+train: C:/Users/bmd tech/Desktop/anpr-project/data/dataset/train/images
+val: C:/Users/bmd tech/Desktop/anpr-project/data/dataset/valid/images
+test: C:/Users/bmd tech/Desktop/anpr-project/data/dataset/test/images
+
+nc: 2
+names: ["Invalid plate", "Plate-Number"]

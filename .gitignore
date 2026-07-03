@@ -216,3 +216,49 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+*.pt
+ocr/test_crops/
+
+# ANPR Project — éléments spécifiques
+
+# Modèles YOLOv8 (fichiers lourds, ne pas versionner)
+*.pt
+*.pth
+*.onnx
+*.engine
+detection/models/
+
+# Images de test et données (ne pas versionner)
+data/images/
+data/annotations/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+
+# Résultats et runs YOLOv8
+runs/
+results/
+
+# Environnement virtuel Python
+venv/
+env/
+
+# Fichiers sensibles
+.env
+*.key
+*.token
+
+# Dossiers IDE
+.vscode/
+.idea/
+
+# Cache EasyOCR
+.EasyOCR/
+
+# Fichiers système Windows
+Thumbs.db
+desktop.ini
+*.pt
+ocr/test_crops/
