@@ -1,0 +1,22 @@
+[
+  {"image": "ocr/test_crops/test_01.jpg", "verite": "DK8490AM"},
+  {"image": "ocr/test_crops/test_02.jpg", "verite": "DK1978ZS"},
+  {"image": "ocr/test_crops/test_03.jpg", "verite": "DK5217AR"},
+  {"image": "ocr/test_crops/test_04.jpg", "verite": "DK7620AB"},
+  {"image": "ocr/test_crops/test_05.jpg", "verite": "00LH2877"},
+  {"image": "ocr/test_crops/test_06.jpg", "verite": "CE137CD"},
+  {"image": "ocr/test_crops/test_07.jpg", "verite": "AA644AS"},
+  {"image": "ocr/test_crops/test_08.jpg", "verite": "DK9542BC"},
+  {"image": "ocr/test_crops/test_09.jpg", "verite": "CH242GP"},
+  {"image": "ocr/test_crops/test_10.jpg", "verite": "AA296AG"},
+  {"image": "ocr/test_crops/test_11.jpg", "verite": "AA123AA"},
+  {"image": "ocr/test_crops/test_12.jpg", "verite": "AA123BC"},
+  {"image": "ocr/test_crops/test_13.jpg", "verite": "EL895JH"},
+  {"image": "ocr/test_crops/test_14.jpg", "verite": "B13JWT"},
+  {"image": "ocr/test_crops/test_15.jpg", "verite": "CM5459"},
+  {"image": "ocr/test_crops/test_16.jpg", "verite": "DK1673M"},
+  {"image": "ocr/test_crops/test_17.jpg", "verite": "5888870"},
+  {"image": "ocr/test_crops/test_18.jpg", "verite": "DL1CP5896"},
+  {"image": "ocr/test_crops/test_19.jpg", "verite": "CB07257"},
+  {"image": "ocr/test_crops/test_20.jpg", "verite": "BB391X"}
+]

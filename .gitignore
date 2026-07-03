@@ -216,10 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+*.pt
+ocr/test_crops/
 
-# ============================================
 # ANPR Project — éléments spécifiques
-# ============================================
 
 # Modèles YOLOv8 (fichiers lourds, ne pas versionner)
 *.pt
@@ -260,3 +260,5 @@ env/
 # Fichiers système Windows
 Thumbs.db
 desktop.ini
+*.pt
+ocr/test_crops/
