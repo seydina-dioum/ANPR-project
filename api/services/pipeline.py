@@ -16,23 +16,38 @@ class AnprService:
         if self.detecteur is None or self.ocr is None:
             return []
 
-        detections = self.detecteur.detecter(image)
+        detections = self.detecteur.traiter(image)
         resultats = []
 
         for det in detections:
             crop = det["crop"]
+            bbox_dict = det["bbox"]
+
+            bbox_liste = [
+                bbox_dict["x1"],
+                bbox_dict["y1"],
+                bbox_dict["x2"],
+                bbox_dict["y2"]
+            ]
+            score = bbox_dict["confiance"]
+
+            if bbox_dict.get("classe") == "Invalid plate":
+                continue
+
             crop_propre = self.preproc.pretraiter(crop)
             ocr_result = self.ocr.lire(crop_propre)
-            texte, verdict = self.validateur.valider(ocr_result.texteBrut)
+            verdict_enum = self.validateur.valider(ocr_result.texteBrut)
+            texte = self.validateur.normaliser(ocr_result.texteBrut)
 
             resultats.append(PlaquResult(
                 texte=texte,
                 texte_brut=ocr_result.texteBrut,
-                bbox=det["bbox"],
-                score_detection=det["score"],
+                bbox=bbox_liste,
+                score_detection=score,
                 conf_ocr=ocr_result.confOcr,
-                valide=(verdict == Verdict.VALIDE),
-                verdict=verdict,
+                valide=(verdict_enum.value == "VALIDE"),
+                verdict=Verdict(verdict_enum.value),
+                moteur_ocr="EasyOCR"
             ))
 
         return resultats

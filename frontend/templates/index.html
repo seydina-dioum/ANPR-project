@@ -11,13 +11,11 @@
         <h1>🚗 ANPR Sénégal</h1>
         <p>Reconnaissance automatique de plaques sénégalaises</p>
 
-        <!-- Onglets -->
         <div class="tabs">
             <button class="tab active" onclick="showTab('upload')">📁 Upload image</button>
             <button class="tab" onclick="showTab('webcam')">📷 Webcam</button>
         </div>
 
-        <!-- Upload image -->
         <div id="tab-upload" class="tab-content active">
             <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
                 <p>Clique ici ou glisse une image</p>
@@ -25,87 +23,24 @@
             </div>
         </div>
 
-        <!-- Webcam -->
         <div id="tab-webcam" class="tab-content">
             <video id="video" autoplay playsinline></video>
             <br>
             <button class="btn" onclick="captureWebcam()">📸 Capturer</button>
         </div>
 
-        <!-- Canvas caché pour webcam -->
         <canvas id="canvas" hidden></canvas>
 
-        <!-- Bouton détecter -->
         <div id="detect-section" style="display:none; margin-top:20px;">
             <img id="preview" style="max-width:100%; border-radius:8px;">
             <br><br>
             <button class="btn btn-detect" onclick="detectPlate()">🔍 Détecter la plaque</button>
         </div>
 
-        <!-- Chargement -->
         <div id="loading" style="display:none;">
             <p>⏳ Analyse en cours...</p>
         </div>
 
-        <!-- Résultats -->
-        <div id="results" style="display:none;">
-            <h2>Résultats</h2>
-            <div id="results-content"></div>
-        </div>
-    </div>
-
-    <script src="/static/js/app.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANPR Sénégal</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>🚗 ANPR Sénégal</h1>
-        <p>Reconnaissance automatique de plaques sénégalaises</p>
-
-        <!-- Onglets -->
-        <div class="tabs">
-            <button class="tab active" onclick="showTab('upload')">📁 Upload image</button>
-            <button class="tab" onclick="showTab('webcam')">📷 Webcam</button>
-        </div>
-
-        <!-- Upload image -->
-        <div id="tab-upload" class="tab-content active">
-            <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
-                <p>Clique ici ou glisse une image</p>
-                <input type="file" id="fileInput" accept="image/*" hidden>
-            </div>
-        </div>
-
-        <!-- Webcam -->
-        <div id="tab-webcam" class="tab-content">
-            <video id="video" autoplay playsinline></video>
-            <br>
-            <button class="btn" onclick="captureWebcam()">📸 Capturer</button>
-        </div>
-
-        <!-- Canvas caché pour webcam -->
-        <canvas id="canvas" hidden></canvas>
-
-        <!-- Bouton détecter -->
-        <div id="detect-section" style="display:none; margin-top:20px;">
-            <img id="preview" style="max-width:100%; border-radius:8px;">
-            <br><br>
-            <button class="btn btn-detect" onclick="detectPlate()">🔍 Détecter la plaque</button>
-        </div>
-
-        <!-- Chargement -->
-        <div id="loading" style="display:none;">
-            <p>⏳ Analyse en cours...</p>
-        </div>
-
-        <!-- Résultats -->
         <div id="results" style="display:none;">
             <h2>Résultats</h2>
             <div id="results-content"></div>
