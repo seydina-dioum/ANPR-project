@@ -1,6 +1,7 @@
 import time
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from api.models.schemas import DetectResponse
+from api.services.init_service import service
 
 router = APIRouter()
 
@@ -12,16 +13,20 @@ async def detect_plates(file: UploadFile = File(...)):
             detail=f"Format non supporté : {file.content_type}."
         )
 
-    start = time.time()
     image_bytes = await file.read()
-
     if len(image_bytes) == 0:
         raise HTTPException(status_code=400, detail="Fichier image vide.")
+
+    start = time.time()
+    try:
+        plaques = await service.analyser(image_bytes)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erreur pipeline : {str(e)}")
 
     temps_ms = round((time.time() - start) * 1000, 1)
 
     return DetectResponse(
-        plaques=[],
-        nb_plaques=0,
+        plaques=plaques,
+        nb_plaques=len(plaques),
         temps_ms=temps_ms,
     )

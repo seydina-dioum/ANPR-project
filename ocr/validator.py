@@ -1,22 +1,34 @@
+from enum import Enum
 import re
-from typing import Tuple
 
-WHITELIST = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+class Verdict(Enum):
+    VALIDE = "VALIDE"
+    DOUTEUSE = "DOUTEUSE"
+    ILLISIBLE = "ILLISIBLE"
 
-PATTERNS = [
-    r"^[A-Z]{2}-\d{3,4}-[A-Z]{2}$",
-    r"^[A-Z]{2}\d{3,4}[A-Z]{2}$",
-]
+class Validateur:
+    def __init__(self):
+        self.whitelist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789- "
+        self.formatsRegex = [
+            r"^SN\d{2}-[A-Z]{3}-\d{3}$",
+            r"^[A-Z]{2}\d{1,6}$",
+            r"^[A-Z]\d{3}[A-Z]{2}$",
+        ]
 
-def normalize(texte_brut: str) -> str:
-    texte = texte_brut.upper().strip()
-    texte = "".join(c for c in texte if c in WHITELIST or c in "- ")
-    texte = re.sub(r"\s+", "-", texte)
-    return texte
+    def _appliquer_whitelist(self, texte: str) -> str:
+        return "".join(c for c in texte if c in self.whitelist)
 
-def validate_plate_sn(texte_brut: str) -> Tuple[str, bool]:
-    texte_normalise = normalize(texte_brut)
-    for pattern in PATTERNS:
-        if re.match(pattern, texte_normalise):
-            return texte_normalise, True
-    return texte_normalise, False
+    def normaliser(self, texte: str) -> str:
+        texte = texte.upper().strip()
+        texte = self._appliquer_whitelist(texte)
+        texte = re.sub(r"\s+", "", texte)
+        return texte
+
+    def valider(self, texte: str) -> Verdict:
+        normalise = self.normaliser(texte)
+        if len(normalise) < 5:
+            return Verdict.ILLISIBLE
+        for pattern in self.formatsRegex:
+            if re.match(pattern, normalise):
+                return Verdict.VALIDE
+        return Verdict.DOUTEUSE

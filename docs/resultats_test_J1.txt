@@ -1,0 +1,27 @@
+=== TEST MODELE PRE-ENTRAINE YOLOv8n — JALON J1 ===
+Dataset : License Plate Computer Vision Model (Roboflow)
+Modele  : yolov8n.pt (pre-entraine COCO)
+Images testees : 10 sur 71
+
+OK  images-11-_jpg.rf.db5667c130325d4a9f18ef → 1 plaque(s) | conf: [0.85]
+NON images-2-_jpg.rf.df312bd07a735a683122944 → aucune plaque
+OK  images-21-_jpg.rf.75bf4df0d4ce7cadc3a2e2 → 1 plaque(s) | conf: [0.38]
+NON images-4-_jpg.rf.d11e390fab6896b876ac06f → aucune plaque
+OK  images-7-_jpg.rf.e70c68c39da5f579f026349 → 1 plaque(s) | conf: [0.6]
+OK  IMG_2738_png.rf.39e4670d6058377fcb2dfbf2 → 2 plaque(s) | conf: [0.84, 0.76]
+OK  IMG_2948_png.rf.c6cc65fed80c959a608ca086 → 1 plaque(s) | conf: [0.74]
+OK  IMG_2950_png.rf.dee181ccf204e01535821072 → 3 plaque(s) | conf: [0.81, 0.76, 0.31]
+OK  IMG_2953_png.rf.a1b04926022fd22477b0b753 → 7 plaque(s) | conf: [0.71, 0.56, 0.54, 0.51, 0.41, 0.34, 0.3]
+OK  IMG_2961_png.rf.2d59d7c76b4e84351314dfef → 3 plaque(s) | conf: [0.68, 0.61, 0.4]
+
+=== RESULTATS ===
+Detectees    : 8/10
+Non detectees: 2/10
+Taux detection: 80%
+
+=== DECISION ===
+Fine-tune recommande : OUI
+Raisons :
+- 2 images non detectees
+- Faux positifs (ex: 7 detections sur une image)
+- Confiances basses sur plusieurs images (< 0.4)
