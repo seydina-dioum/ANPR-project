@@ -20,15 +20,36 @@ class OcrEngine(ABC):
 
 class EasyOcrEngine(OcrEngine):
     def __init__(self, langues=None):
-        self.langues = langues or ["fr"]
+        # Utiliser "en" au lieu de "fr" : les plaques n'ont pas de caractères accentués
+        self.langues = langues or ["en"]
         self._reader = easyocr.Reader(self.langues, gpu=False)
+        # Allowlist : uniquement les caractères présents sur les plaques d'immatriculation
+        self._allowlist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
     def lire(self, crop) -> OcrResult:
-        resultats = self._reader.readtext(crop)
+        resultats = self._reader.readtext(
+            crop,
+            allowlist=self._allowlist,
+            detail=1,
+            paragraph=False,
+        )
         if not resultats:
             return OcrResult(texteBrut="", confOcr=0.0)
-        _, texte, confiance = max(resultats, key=lambda r: r[2])
-        return OcrResult(texteBrut=texte, confOcr=float(confiance))
+
+        # Trier les segments de gauche à droite par la coordonnée X minimale
+        resultats.sort(key=lambda r: min(pt[0] for pt in r[0]))
+
+        # Concaténer TOUS les segments détectés au lieu de ne garder que le meilleur
+        textes = []
+        confiances = []
+        for bbox, texte, confiance in resultats:
+            textes.append(texte)
+            confiances.append(confiance)
+
+        texte_complet = "".join(textes)
+        confiance_moyenne = sum(confiances) / len(confiances) if confiances else 0.0
+
+        return OcrResult(texteBrut=texte_complet, confOcr=float(confiance_moyenne))
 
 
 class TesseractEngine(OcrEngine):
